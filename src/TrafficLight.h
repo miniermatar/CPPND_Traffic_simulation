@@ -3,6 +3,9 @@
 
 #include <mutex>
 #include <deque>
+#include <thread>
+#include <random>
+#include <chrono>
 #include <condition_variable>
 #include "TrafficObject.h"
 
