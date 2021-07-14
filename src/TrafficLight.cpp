@@ -72,8 +72,8 @@ void TrafficLight::cycleThroughPhases()
                 _currentPhase=TrafficLightPhase::green;
             else if (_currentPhase==TrafficLightPhase::green)
                 _currentPhase=TrafficLightPhase::red;
-            //_messageQueue.send(std::move(_currentPhase));
-             t_ini = std::chrono::system_clock::now();
+            _queue.send(std::move(_currentPhase));
+            t_ini = std::chrono::system_clock::now();
 
         }
     std::this_thread::sleep_for(std::chrono::milliseconds{1});
