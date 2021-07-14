@@ -73,8 +73,6 @@ void TrafficLight::cycleThroughPhases()
     // Also, the while-loop should use std::this_thread::sleep_for to wait 1ms between two cycles. 
 
 //Ramdom timer - source: https://stackoverflow.com/questions/7577452/random-time-delay
-
-
     std::mt19937_64 eng{std::random_device{}()};  // or seed however you want
     std::uniform_int_distribution<> dist{4000, 6000};
     auto t_ini = std::chrono::system_clock::now();
@@ -87,7 +85,6 @@ void TrafficLight::cycleThroughPhases()
                 _currentPhase=TrafficLightPhase::red;
             _queue.send(std::move(_currentPhase));
             t_ini = std::chrono::system_clock::now();
-
         }
     std::this_thread::sleep_for(std::chrono::milliseconds{1});
 
